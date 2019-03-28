@@ -1,0 +1,13 @@
+1.下载NOOBs[1]工具。它是树莓派官方的操作系统安装器，它安装操作系统到该设备的过程非常简单。我选择的是NOOBS，而不是NOOBS lite版本，根据介绍，可以看到lite版本是在线安装版本，本剧自己的需要进行选择。
+
+2.下载SD Memory Card Formatter [2] ，选择你的内存卡，进行Overwrite formatter格式化。否则可能出错[3]。之后在我的电脑中右键，格式化，以fat32 分配单元大小16k再进行一次格式化。
+
+3.将下载好的noobs压缩包放在tf卡中，在根目录下解压。注意一定要在内存卡解压，且一定要解压到根目录！
+
+4..拔卡，插到树莓派，开机。
+
+[1]:https://www.raspberrypi.org/downloads/noobs/
+
+[2]:https://www.sdcard.org/downloads/formatter_4/
+
+[3]:https://blog.csdn.net/lvshu_yuan/article/details/80916609
