@@ -1,0 +1,21 @@
+修改root 密码{
+vim /etc/my.cnf #总之就是找到my.cnf这个文件。
+
+在[mysqld]下的最后一行加上
+skip-grant-tables
+然后保存退出
+
+service mysql restart #重启mysql
+
+mysql -u root -p mysql #登录mysql 直接回车，就可以跳过密码。
+
+看了很多教程都说，用
+update MySQL.user set password=PASSWORD(‘newpassword’) where User=’root’; 
+更新密码，但是这是个很大的坑，5.8及以后的版本，password字段改成了authentication_string除此之外，mysql不能大写，否则提示没有这个表。
+所以用：
+update mysql.user set authentication_string=password(‘root’) where user=’root’ ;
+
+flush privileges; #刷新
+
+quit #退出
+}
