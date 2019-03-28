@@ -1,0 +1,23 @@
+1.首先，在python脚本中的首行添加解释器 的绝对路径(通过在命令行中使用 which python3获取路径)
+
+  #!/usr/local/anaconda3/bin/python3
+
+2.在crontab中添加任务
+
+  crontab -e (在当前用户下的 crontab中添加 )
+
+  */1 * * * * /usr/local/anaconda3/bin/python3 /your_path/your_file.py
+
+*/1****表示每分钟运行一次脚本。其次紧跟解释器的绝对路径！一定要是绝对路径，不然找不到解释器，会出/bin/sh: python3: command not found。
+
+3.查看crontab是否运行，没运行就start
+
+
+  Cent OS : sudo service crond status(stop/start/restart) 
+
+  Ubuntu : sudo service cron start(stop/start/restart)
+
+其中，如果python脚本出错，通过vi /var/spool/mail/your_usrname查看mail，可以看见python的output。如果不想crontab产生mail，可以再定时任务的命令后面加>/dev/null 2>&1 。
+
+比如 ：
+  */1 * * * * /usr/local/anaconda3/bin/python3 /your_path/your_file.py >/dev/null 2>&1
