@@ -1,0 +1,13 @@
+1.下载Win32 Disk Imager[1]工具，安装。
+
+2.下载一个bootsector.img[2]镜像。
+
+3.打开第一步下载好的工具，将第二步下载好的镜像写入TF卡。
+
+ 
+
+(win+R ，然后输入diskmgmt.msc回车可以找到win磁盘管理器)
+
+[1]:https://sourceforge.net/projects/win32diskimager/
+
+[2]:http://www.shumeipai.net/resource.php?mod=view&rid=302
